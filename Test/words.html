@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Words</title>
+</head>
+<body>
+	<button onclick="getThreeLongestWords()">Click me!</button>
+	<script>
+		function getThreeLongestWords() {
+    	var str = prompt('put your text here',''), strSplit = [], threeLongestWords = [];
+
+	    sortWordsByLength(str);
+
+	    function sortWordsByLength(str) {
+	        strSplit = str.split(' ').sort(function(a,b) {
+	            return b.length - a.length;
+	        });
+	        return strSplit;
+	    };
+
+	    for (i = 1; i <= 3; i++) {
+	        threeLongestWords.push(strSplit[0]);
+	        strSplit.shift();
+	    }
+
+	    alert(threeLongestWords.join(';'))
+		}
+	</script>
+</body>
+</html>

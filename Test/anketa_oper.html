@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Anketa</title>
+</head>
+<body>
+	<script>
+		var lastName = prompt('What is your last name?', '');
+		var name = prompt('What is your name?', '');
+		var middleName = prompt('What is your middle name?', '');
+		var age = +prompt('What is your age?', '')
+		var gender = confirm('Are you a male?', '');
+		var ageDays = age * 365;
+
+		var genderAlert = gender ? 'male' : 'female';
+
+		var retirementStatus = (age > 62) ? 'yes' : 
+			(!gender && age > 57) ?  'yes' : 'no';
+
+		alert(
+			'FIO: ' + lastName + ' ' + name + ' ' + middleName + '\n' + 
+			'age, years: ' + age + '\n' +
+			'age, days: ' + ageDays + '\n' +
+			'gender: ' + genderAlert + '\n' +
+			'retiree: ' +  retirementStatus
+		);
+	</script>
+</body>
+</html>
